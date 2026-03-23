@@ -23,7 +23,26 @@ window.onload = () => {
 function initDB() {
     const saved = localStorage.getItem('policlinico_db');
     if (saved) {
-        db = JSON.parse(saved);
+        const savedDB = JSON.parse(saved);
+
+        // ✅ FIX: Sincroniza nombres desde staffList sin borrar los registros de horas
+        db = staffList.map(p => {
+            const existing = savedDB.find(s => s.id === p.id);
+            if (existing) {
+                return {
+                    ...existing,       // conserva status, times, room
+                    fullName: p.fullName, // ✅ actualiza nombre completo
+                    name: p.name          // ✅ actualiza nombre corto
+                };
+            }
+            // Personal nuevo que no existía antes
+            return {
+                ...p,
+                status: 'none',
+                times: { in: '-', motivo: '-', regreso: '-', final: '-' }
+            };
+        });
+        save();
     } else {
         db = staffList.map(p => ({
             ...p,
