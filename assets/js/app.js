@@ -19,11 +19,18 @@ const staffList = [
     { id: 12, fullName: "Dra. Salazar Carrasco Sofia",         name: "Dra. Sofia Salazar",    room: "Triaje" },
     { id: 13, fullName: "Dra. Vizcarra Jimenez Dariela",         name: "Dra. Dariela Vizcarra",    room: "Triaje" },
     { id: 14, fullName: "Dra. Carrasco Espinza Adriana Isabel",         name: "Dra. Adriana Carrasco",    room: "Triaje" },
-    { id: 15, fullName: "Dra. CD. Bornaz Arenas Milagros",         name: "Dra. Milagros Bornaz",    room: "Triaje" },
-    { id: 16, fullName: "Dr. CD. Castro Torres Jorge Luis",         name: "Dr. Jorge Castro",    room: "Triaje" },
-    { id: 17, fullName: "Dr. CD. Hoyos Garcia Jorge",         name: "Dr. Jorge Hoyos",    room: "Triaje" },
-    { id: 18, fullName: "Dr. CD. Nina Cohaila David",         name: "Dr. David Nina",    room: "Triaje" },
-    { id: 19, fullName: "Dr. CD. Yturry Choqueza Ernesto",         name: "Dr. Ernesto Yturry",    room: "Triaje" }
+    { id: 15, fullName: "Dr. Vasquez Zubieta Luis",         name: "Dra. Luis Vasquez",    room: "Triaje" },
+    { id: 16, fullName: "Dra. CD. Bornaz Arenas Milagros",         name: "Dra. Milagros Bornaz",    room: "Triaje" },
+    { id: 17, fullName: "Dr. CD. Castro Torres Jorge Luis",         name: "Dr. Jorge Castro",    room: "Triaje" },
+    { id: 18, fullName: "Dr. CD. Hoyos Garcia Jorge",         name: "Dr. Jorge Hoyos",    room: "Triaje" },
+    { id: 19, fullName: "Dr. CD. Nina Cohaila David",         name: "Dr. David Nina",    room: "Triaje" },
+    { id: 20, fullName: "Dr. CD. Yturry Choqueza Ernesto",         name: "Dr. Ernesto Yturry",    room: "Triaje" },
+    { id: 21, fullName: "Lic. QF. Somocurcio Nuñes Tatiana Emma",         name: "Lic. Tatiana Somocurcio",    room: "Triaje" },
+    { id: 22, fullName: "Lic. Yucra Onque Pedro",         name: "Lic. Pedro Yucra",    room: "Triaje" },
+    { id: 23, fullName: "Lic. Garcia Delgado Yesenia",         name: "Lic. Yesenia Garcia",    room: "Triaje" },
+    { id: 24, fullName: "Lic. Berrios Salas Edda",         name: "Lic. Edda Berrios",    room: "Triaje" },
+    { id: 25, fullName: "Lic. Pari Flores Noelia",         name: "Lic. Noelia Pari",    room: "Triaje" },
+    { id: 26, fullName: "Lic. Fuentes Fuster Fabiola",         name: "Lic. Fabiola Fuentes",    room: "Triaje" }
 ];
 
 let db = [];
