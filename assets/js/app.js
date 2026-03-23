@@ -10,8 +10,7 @@ const staffList = [
     { id: 3, fullName: "Lic. Ricardo Enrique Luna Paredes",   name: "Lic. Ricardo Luna",  room: "C-103" },
     { id: 4, fullName: "Tec. Maria Isabel Sosa Quispe",       name: "Tec. Maria Sosa",    room: "Lab-1" },
     { id: 5, fullName: "Dr. Juan Carlos Peralta Flores",      name: "Dr. Juan Peralta",   room: "C-105" },
-    { id: 6, fullName: "Lic. Ana Lucia Mendez Rojas",         name: "Lic. Ana Mendez",    room: "Triaje" },
-    { id: 6, fullName: "Lic. Veronica Fernades Caseres Flores",         name: "Lic. Veronica Flores",    room: "Triaje" }
+    { id: 6, fullName: "Lic. Ana Lucia Mendez Rojas",         name: "Lic. Ana Mendez",    room: "Triaje" }
 ];
 
 let db = [];
@@ -49,7 +48,6 @@ function renderStaff(filter = "") {
     const container = document.getElementById('staff-list');
     container.innerHTML = "";
 
-    // ✅ CAMBIO 1: Busca por fullName (nombre completo)
     db.filter(p => p.fullName.toLowerCase().includes(filter.toLowerCase()))
       .forEach(p => {
         const card = document.createElement('div');
@@ -57,7 +55,11 @@ function renderStaff(filter = "") {
         card.innerHTML = `
             <div class="card-header">
                 <div class="name-tag">
-                    <h4>${p.name}</h4>
+                    <h4>
+                        ${p.name}
+                        <button class="btn-eye" onclick="toggleFullName(this, '${p.fullName}')" title="Ver nombre completo">&#128065;</button>
+                    </h4>
+                    <span class="full-name-tooltip" style="display:none;">${p.fullName}</span>
                 </div>
                 <div class="room-tag">
                     <input type="text" value="${p.room}" onchange="updateRoom(${p.id}, this.value)" placeholder="Cons.">
@@ -80,6 +82,14 @@ function renderStaff(filter = "") {
         `;
         container.appendChild(card);
     });
+}
+
+// ✅ NUEVO: Muestra/oculta el nombre completo bajo el nombre corto
+function toggleFullName(btn, fullName) {
+    const tooltip = btn.closest('.name-tag').querySelector('.full-name-tooltip');
+    const isVisible = tooltip.style.display !== 'none';
+    tooltip.style.display = isVisible ? 'none' : 'block';
+    btn.classList.toggle('eye-active', !isVisible);
 }
 
 function mark(id, type) {
@@ -110,7 +120,6 @@ function renderHistory() {
     body.innerHTML = "";
 
     const sorted = [...db]
-        // ✅ CAMBIO 2: Solo muestra personal que tenga hora de ingreso registrada
         .filter(p => p.times.in !== '-')
         .sort((a, b) => a.times.in.localeCompare(b.times.in));
 
@@ -128,7 +137,11 @@ function renderHistory() {
     sorted.forEach(p => {
         body.innerHTML += `
             <tr>
-                <td><strong>${p.name}</strong></td>
+                <td>
+                    <strong>${p.name}</strong>
+                    <button class="btn-eye btn-eye-table" onclick="toggleHistoryName(this, '${p.fullName}')" title="Ver nombre completo">&#128065;</button>
+                    <div class="full-name-tooltip" style="display:none; font-size:0.8rem; color:#555; margin-top:3px;">${p.fullName}</div>
+                </td>
                 <td>${p.room}</td>
                 <td style="color:#27ae60; font-weight:600">${p.times.in}</td>
                 <td style="color:#e67e22; font-weight:600">${p.times.motivo}</td>
@@ -137,6 +150,14 @@ function renderHistory() {
             </tr>
         `;
     });
+}
+
+// ✅ NUEVO: Toggle nombre completo en historial
+function toggleHistoryName(btn, fullName) {
+    const tooltip = btn.nextElementSibling;
+    const isVisible = tooltip.style.display !== 'none';
+    tooltip.style.display = isVisible ? 'none' : 'block';
+    btn.classList.toggle('eye-active', !isVisible);
 }
 
 // Modal y Reinicio
