@@ -5,12 +5,12 @@
 // room     : consultorio por defecto (editable en pantalla)
 // ============================================================
 const staffList = [
-    { id: 1, fullName: "Dr. Omar Alejandro Carpio Mendoza",   name: "Dr. Omar Carpio",    room: "C-101" },
-    { id: 2, fullName: "Dra. Elena Patricia Torres Vega",     name: "Dra. Elena Torres",  room: "C-102" },
-    { id: 3, fullName: "Lic. Ricardo Enrique Luna Paredes",   name: "Lic. Ricardo Luna",  room: "C-103" },
-    { id: 4, fullName: "Tec. Maria Isabel Sosa Quispe",       name: "Tec. Maria Sosa",    room: "Lab-1" },
-    { id: 5, fullName: "Dr. Juan Carlos Peralta Flores",      name: "Dr. Juan Peralta",   room: "C-105" },
-    { id: 6, fullName: "Lic. Ana Lucia Mendez Rojas",         name: "Lic. Ana Mendez",    room: "Triaje" }
+    { id: 1, fullName: "Dra. Torres Avalos Nadia del Pilar",   name: "Dra. Nadia Torres",    room: "C-101" },
+    { id: 2, fullName: "Dra. Fernandez Yupanqui Veronica",     name: "Dra. Veronica Fernandez",  room: "C-102" },
+    { id: 3, fullName: "Dr. Yaco Quispe Juan Carlos",   name: "Dr. Juan Carlos Yaco",  room: "C-103" },
+    { id: 4, fullName: "Dr. Castillo Inquilla Miguel",       name: "Dr. Miguel Inquilla",    room: "Lab-1" },
+    { id: 5, fullName: "Dra. Puma Angelo Rosario Elizabeth",      name: "Dra. Rosario Puma",   room: "C-105" },
+    { id: 6, fullName: "Dra. Mauricio Cordova Yelitza",         name: "Dra. Yelitza Mauricio",    room: "Triaje" }
 ];
 
 let db = [];
